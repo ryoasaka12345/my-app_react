@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import ProductItem from './components/ProductItem';
+import './components/ProductItem.css'
 
+// The syntax inside function App() called JSX
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Getting Started with React.</h2>
+      <ul>
+        <ProductItem></ProductItem>
+      </ul>
     </div>
   );
 }
