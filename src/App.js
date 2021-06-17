@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import ProductItem from './components/ProductItem';
-import './components/ProductItem.css'
+import ProductItem from './components/Products/ProductItem';
+import './components/Products/ProductItem.css'
+import ProductList from './components/Products/ProductList';
 
 // The syntax inside function App() called JSX
 function App() {
@@ -15,33 +16,9 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div>
       <h2>Getting Started with React.</h2>
-      <ProductItem
-        name={products[0].name}
-        price={products[0].price}
-        category={products[0].category}
-      ></ProductItem>
-      <ProductItem
-        name={products[1].name}
-        price={products[1].price}
-        category={products[1].category}
-      ></ProductItem>
-      <ProductItem
-        name={products[2].name}
-        price={products[2].price}
-        category={products[2].category}
-      ></ProductItem>
-      <ProductItem
-        name={products[3].name}
-        price={products[3].price}
-        category={products[3].category}
-      ></ProductItem>
-      <ProductItem
-        name={products[4].name}
-        price={products[4].price}
-        category={products[4].category}
-      ></ProductItem>
+      <ProductList products={products}></ProductList>
     </div>
   );
 }
