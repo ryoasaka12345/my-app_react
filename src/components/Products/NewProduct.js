@@ -7,7 +7,7 @@ const NewProduct = () => {
     //     and the second is the function used to put the value into the box.
     const [inputedName, setInputedName] = useState('');
     const [inputedPrice, setInputedPrice] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('Fashion');
 
     // Define handle functions for form events.
     // e: event
@@ -31,7 +31,7 @@ const NewProduct = () => {
 
         setInputedName('');
         setInputedPrice('');
-        setSelectedCategory('');
+        setSelectedCategory('Fashion');
     }
 
     return (
