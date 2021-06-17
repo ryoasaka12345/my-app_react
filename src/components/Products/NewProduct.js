@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './NewProduct.css';
 
-const NewProduct = () => {
+const NewProduct = (props) => {
     // Define states for user input data
     //     The first argument in [] is the name of the box, 
     //     and the second is the function used to put the value into the box.
@@ -22,8 +22,18 @@ const NewProduct = () => {
         setSelectedCategory(e.target.value);
     }
 
+    // Handle form submision
     const submitHandler = (e) => {
         e.preventDefault();
+
+        const productData = {
+            name: inputedName,
+            price: inputedPrice,
+            category: selectedCategory
+        };
+
+        // Call the function to pass data to parent component
+        props.onAddProduct(productData);
 
         console.log(inputedName, inputedPrice, selectedCategory);
 

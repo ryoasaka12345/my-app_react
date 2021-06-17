@@ -16,10 +16,15 @@ function App() {
     { name: "Smar Tivi Sony 59 Inch", category: "Smart Tivi", price: 700 }
   ];
 
+  const addProductHandler = product => {
+    console.log("Process to add product");
+    console.log(product);
+  }
+
   return (
     <div>
       <h2>Getting Started with React.</h2>
-      <NewProduct></NewProduct>
+      <NewProduct onAddProduct={addProductHandler}></NewProduct>
       <ProductList products={products}></ProductList>
     </div>
   );
