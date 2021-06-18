@@ -16,10 +16,16 @@ function App() {
     { name: "Smar Tivi Sony 59 Inch", category: "Smart Tivi", price: 700 }
   ];
 
+  const addProductHandler = product => {
+    console.log("Process to add product");
+    console.log(product);
+  };
+
   return (
     <div>
-      <h2>Getting Started with React.</h2>
-      <NewProduct></NewProduct>
+      {/* Pass the function as an argument to NewProduct.js with the name `onAddProduct` */}
+      <NewProduct onAddProduct={addProductHandler}></NewProduct> 
+      {/* Pass the list as an argument to ProductList.js with the name `products` */}
       <ProductList products={products}></ProductList>
     </div>
   );
