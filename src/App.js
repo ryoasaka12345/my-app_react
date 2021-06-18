@@ -18,7 +18,6 @@ function App() {
 
   const addProductHandler = product => {
     console.log("Process to add product");
-    console.log(product);
   };
 
   return (

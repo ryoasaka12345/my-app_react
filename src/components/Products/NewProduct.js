@@ -22,6 +22,7 @@ const NewProduct = (props) => {
         setSelectedCategory(e.target.value);
     }
 
+    // Handle form submision
     const submitHandler = (e) => {
         e.preventDefault();
 
