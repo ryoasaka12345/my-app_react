@@ -21,9 +21,9 @@ function App() {
 
   const addProductHandler = (product) => {
     product.id = Math.floor(Math.random() * 100);
-    setProducts((prevProducts) => {
-      // below is not state but array
-      return [product, prevProducts];
+    // preProducts is the value that was originally set.
+    setProducts((preProducts) => {
+      return [product, ...preProducts];
     });
   }
 

@@ -36,7 +36,6 @@ const NewProduct = (props) => {
         props.onAddProduct(productData);
 
         // reset form to empty
-
         setInputedName('');
         setInputedPrice('');
         setSelectedCategory('Fashion');
