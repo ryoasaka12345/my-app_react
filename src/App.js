@@ -4,28 +4,31 @@ import ProductItem from './components/Products/ProductItem';
 import './components/Products/ProductItem.css';
 import ProductList from './components/Products/ProductList';
 import NewProduct from './components/Products/NewProduct';
+import React, {useState} from 'react';
+
+const DEFAULT_PRODUCTS = [
+  { name: "Dress", category: "Fashion", price: 12 },
+  { name: "T-Shirt", category: "Fashion", price: 12 },
+  { name: "Red Dress", category: "Fashion", price: 20 },
+  { name: "iPhoneX", category: "Smartphone", price: 600 },
+  { name: "iPhone 12", category: "Smartphone", price: 1200 },
+  { name: "Smart Tivi Sony 50 Inch", category: "Smart Tivi", price: 700 }
+];
 
 // The syntax inside function App() called JSX
 function App() {
+  const [products, setProducts] = useState(DEFAULT_PRODUCTS);
 
-  const products = [
-    { name: "T-Shirt", category: "Fashion", price: 12 },
-    { name: "Red Dress", category: "Fashion", price: 20 },
-    { name: "iPhoneX", category: "Smartphpne", price: 600 },
-    { name: "iPhone 12", category: "Fasion", price: 1200 },
-    { name: "Smar Tivi Sony 59 Inch", category: "Smart Tivi", price: 700 }
-  ];
-
-  const addProductHandler = product => {
-    console.log("Process to add product");
-    console.log(product);
-  }
+  const addProductHandler = (product) => {
+    setProducts((prevProducts) => {
+      return [product, ...prevProducts];
+    });
+  };
 
   return (
     <div>
-      <h2>Getting Started with React.</h2>
-      <NewProduct onAddProduct={addProductHandler}></NewProduct>
-      <ProductList products={products}></ProductList>
+      <NewProduct onAddProduct={addProductHandler} />
+      <ProductList products={products}/>
     </div>
   );
 }
