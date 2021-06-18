@@ -18,12 +18,13 @@ function App() {
 
   const addProductHandler = product => {
     console.log("Process to add product");
-  };
+    console.log(product);
+  }
 
   return (
     <div>
       {/* Pass the function as an argument to NewProduct.js with the name `onAddProduct` */}
-      <NewProduct onAddProduct={addProductHandler}></NewProduct> 
+      <NewProduct onAddProduct={addProductHandler}></NewProduct>
       {/* Pass the list as an argument to ProductList.js with the name `products` */}
       <ProductList products={products}></ProductList>
     </div>

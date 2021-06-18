@@ -38,7 +38,7 @@ const NewProduct = (props) => {
         // Reset form to empty
         setInputedName('');
         setInputedPrice('');
-        setSelectedCategory('');
+        setSelectedCategory('Fashion');
     }
 
     return (
