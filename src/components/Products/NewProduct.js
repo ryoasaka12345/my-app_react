@@ -35,8 +35,6 @@ const NewProduct = (props) => {
         // Call the function to pass data to parent component
         props.onAddProduct(productData);
 
-        console.log(inputedName, inputedPrice, selectedCategory);
-
         // reset form to empty
 
         setInputedName('');
