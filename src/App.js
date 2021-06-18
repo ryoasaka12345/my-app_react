@@ -20,6 +20,7 @@ function App() {
   const [products, setProducts] = useState(DEFAULT_PRODUCTS);
 
   const addProductHandler = (product) => {
+    product.id = Math.floor(Math.random() * 100);
     setProducts((prevProducts) => {
       // below is not state but array
       return [product, prevProducts];
@@ -29,7 +30,7 @@ function App() {
   return (
     <div>
       <NewProduct onAddProduct={addProductHandler} />
-      <ProductList products={products}/>
+      <ProductList products={products} />
     </div>
   );
 }

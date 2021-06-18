@@ -8,6 +8,7 @@ function ProductList(props) {
             {/* like `foreach($products as $product)  */}
             {props.products.map(product => (
                 <ProductItem
+                    key={product.id}
                     name={product.name}
                     price={product.price}
                     category={product.category}
