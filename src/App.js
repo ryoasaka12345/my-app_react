@@ -4,7 +4,7 @@ import ProductItem from './components/Products/ProductItem';
 import './components/Products/ProductItem.css';
 import ProductList from './components/Products/ProductList';
 import NewProduct from './components/Products/NewProduct';
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
 const DEFAULT_PRODUCTS = [
   { id: Math.floor(Math.random() * 100), name: "Dress", category: "Fashion", price: 12 },
@@ -28,11 +28,11 @@ function App() {
   }
 
   return (
-    <div>
+    <Fragment>
       <h2>Getting Started with React</h2>
       <NewProduct onAddProduct={addProductHandler} />
       <ProductList products={products} />
-    </div>
+    </Fragment>
   );
 }
 
