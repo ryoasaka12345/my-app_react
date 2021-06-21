@@ -7,13 +7,19 @@ function ProductItem(props) {
     // `useState` return an array with 2 elements, 
     // first is the value, second is a function
     const [name, setName] = useState(props.name);
+    const [itemClasses, setItemsClasses] = useState('product-item');
 
     const titleClickHandler = () => {
-        alert(name + ' clicked');
+        setName(name + ': clicked');
+    }
+
+    const itemClickHandler = () => {
+        setItemsClasses('product-item product-item--active');
+        console.log('test itemClickHandler');
     }
 
     return (
-        <div className="product-item">
+        <div className={itemClasses} onClick={itemClickHandler} >
             <div>{props.category}</div>
             <div className="product-item__description">
                 <h3 onClick={titleClickHandler}>{name}</h3>

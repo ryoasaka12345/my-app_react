@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div>
+      <h2>Getting Started with React</h2>
       <NewProduct onAddProduct={addProductHandler} />
       <ProductList products={products} />
     </div>
