@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './NewProduct.css';
 
 const NewProduct = (props) => {
@@ -8,6 +8,8 @@ const NewProduct = (props) => {
     const [inputedName, setInputedName] = useState('');
     const [inputedPrice, setInputedPrice] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('Fashion');
+
+    const productNameElm = useRef(null);
 
     // Define handle functions for form events.
     // e: event
@@ -39,6 +41,8 @@ const NewProduct = (props) => {
         setInputedName('');
         setInputedPrice('');
         setSelectedCategory('Fashion');
+
+        productNameElm.current.focus();
     }
 
     return (
@@ -52,6 +56,7 @@ const NewProduct = (props) => {
                             value={inputedName}
                             type='text'
                             placeholder="Product name"
+                            ref={productNameElm}
                         />
                     </div>
                     <div className='new-product__control'>
@@ -70,7 +75,7 @@ const NewProduct = (props) => {
                             onChange={categoryChangeHandler}>
                             <option value="Fashion">Fashion</option>
                             <option value="Smart Phone">Smartphone</option>
-                            <option value="Fashion">Smart Tivi</option>
+                            <option value="Smart Tivi">Smart Tivi</option>
                         </select>
                     </div>
                 </div>
